@@ -1,16 +1,19 @@
 require "tty-table"
 
 table = TTY::Table.new(header: ["id", "First Name", "Second Name", "Salary", "Active"], rows: [])
+puts table.render :unicode
+p table.rows
+# return
 while true
   total = table.rows_size
   puts "EMPLOYEE's (#{total} total)"
   puts table.render :unicode
-  puts "[C]reat [R]ead [U]pdate [D]elete [Q]uit"
+  puts "[C]reate [R]ead [U]pdate [D]elete [Q]uit"
   input = gets.chomp
 
   if input.upcase == "C" #create
     puts "Id:"
-    id = gets.chomp
+    id = gets.chomp.to_i
     puts "First Name:"
     first_name = gets.chomp
     puts "Second Name:"
@@ -46,7 +49,8 @@ while true
         if selection.upcase == "I"
           #the problem starts here, ask why I can't make a full edit at a specific point
           puts "Please enter a new ID"
-          table[i, 0] << gets.chomp
+          new_id = gets.chomp
+
           puts "employee has been updated: #{table[i]}"
           break
         elsif selection.upcase == "F"
