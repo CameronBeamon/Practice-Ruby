@@ -3,7 +3,7 @@ def spare(score)
   return score
 end
 
-def strike(score)
+def strike(score, roll)
   score = score + (roll * 2)
   return score
 end
@@ -22,10 +22,10 @@ while turn < 20
       roll = gets.chomp.to_i
       #to end the game if they roll perfectly
       if turn == 20
-        score = strike(score)
+        score = strike(score, roll)
         break
       else
-        score = strike(score)
+        score = strike(score, roll)
         # increase the turn by 2 so if they roll a strike then it goes ot the next round skipping even numbers
         turn = turn + 2
       end
