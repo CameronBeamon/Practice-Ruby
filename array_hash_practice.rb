@@ -26,3 +26,17 @@ while i < first_array.length
 end
 
 p second_array
+
+#  8. Start with an array of strings and create a new array with each string's first letter only.
+#     For example, ["hello", "goodbye"] becomes ["h", "g"].
+
+word_array = ["hello", "goodbye"]
+first_letter = []
+
+i = 0
+while i < word_array.length
+  first_letter << word_array[i][0]
+  i = i + 1
+end
+
+p first_letter
