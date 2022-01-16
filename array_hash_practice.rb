@@ -12,3 +12,17 @@ while i < array.length
 end
 
 pp new_hash
+
+# 10. Start with an array of numbers and create a new array with each number converted into a string.
+#     For example, [1, 2, 3] becomes ["1", "2", "3"].
+
+first_array = [1, 2, 3]
+second_array = []
+i = 0
+
+while i < first_array.length
+  second_array << first_array[i].to_s
+  i = i + 1
+end
+
+p second_array
